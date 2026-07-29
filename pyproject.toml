@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpu-accelerated-nlm"
+version = "0.1.0"
+description = "CUDA-accelerated Non-Local Means image denoising"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "scipy",
+    "scikit-image",
+    "opencv-python",
+    "cupy-cuda13x",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
